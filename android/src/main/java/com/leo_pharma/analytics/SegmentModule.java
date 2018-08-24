@@ -15,7 +15,6 @@ import com.segment.analytics.android.integrations.amplitude.AmplitudeIntegration
 import com.segment.analytics.android.integrations.appboy.AppboyIntegration;
 import com.segment.analytics.android.integrations.appsflyer.AppsflyerIntegration;
 import com.segment.analytics.android.integrations.bugsnag.BugsnagIntegration;
-import com.segment.analytics.android.integrations.comscore.ComScoreIntegration;
 import com.segment.analytics.android.integrations.countly.CountlyIntegration;
 import com.segment.analytics.android.integrations.crittercism.CrittercismIntegration;
 import com.segment.analytics.android.integrations.firebase.FirebaseIntegration;
@@ -113,10 +112,6 @@ public class SegmentModule extends ReactContextBaseJavaModule {
 
         if (isClassAvailable("com.segment.analytics.android.integrations.bugsnag.BugsnagIntegration")) {
             analyticsBuilder.use(BugsnagIntegration.FACTORY);
-        }
-
-        if (isClassAvailable("com.segment.analytics.android.integrations.comscore.ComScoreIntegration")) {
-            analyticsBuilder.use(ComScoreIntegration.FACTORY);
         }
 
         if (isClassAvailable("com.segment.analytics.android.integrations.countly.CountlyIntegration")) {
