@@ -92,6 +92,10 @@ RCT_EXPORT_METHOD(setup:(NSString *)key
 #ifdef SEGTaplyticsIntegrationFactoryImported
     [config use:[SEGTaplyticsIntegrationFactory instance]];
 #endif
+  
+#ifdef SEGADTrackerImported
+    [config use:[SEGADTracker instance]];
+#endif
 
 #ifdef SEGAdjustIntegrationFactoryImported
     [config use:[SEGAdjustIntegrationFactory instance]];
