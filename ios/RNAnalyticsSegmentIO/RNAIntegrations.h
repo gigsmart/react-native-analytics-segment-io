@@ -20,6 +20,17 @@
 #define SEGTaplyticsIntegrationFactoryImported
 #endif
 
+#if __has_include(<Analytics-iAds-Attribution/SEGADTracker.h>)
+#import <Analytics-iAds-Attribution/SEGADTracker.h>
+#define SEGADTrackerImported
+#elif __has_include(<Analytics_iAds_Attribution/SEGADTracker.h>)
+#import <Analytics_iAds_Attribution/SEGADTracker.h>
+#define SEGADTrackerImported
+#elif __has_include("SEGTaplyticsIntegrationFactory.h")
+#import "SEGADTracker.h"
+#define SEGADTrackerImported
+#endif
+
 #if __has_include(<Segment-Adjust/SEGAdjustIntegrationFactory.h>)
 #import <Segment-Adjust/SEGAdjustIntegrationFactory.h>
 #define SEGAdjustIntegrationFactoryImported
