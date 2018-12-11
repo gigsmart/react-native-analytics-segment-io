@@ -49,6 +49,10 @@ RCT_EXPORT_METHOD(setup:(NSString *)key
 {
     SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:key];
 
+    #ifdef SEGADTrackerImported
+        config.middlewares = @[ [SEGADTracker middleware] ];
+    #endif
+
     id value = options[kSEGEnableAdvertisingTrackingKey];
     if (value != nil) {
         config.enableAdvertisingTracking = [RCTConvert BOOL:value];
@@ -91,10 +95,6 @@ RCT_EXPORT_METHOD(setup:(NSString *)key
 
 #ifdef SEGTaplyticsIntegrationFactoryImported
     [config use:[SEGTaplyticsIntegrationFactory instance]];
-#endif
-  
-#ifdef SEGADTrackerImported
-    [config use:[SEGADTracker instance]];
 #endif
 
 #ifdef SEGAdjustIntegrationFactoryImported

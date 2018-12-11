@@ -26,7 +26,7 @@
 #elif __has_include(<Analytics_iAds_Attribution/SEGADTracker.h>)
 #import <Analytics_iAds_Attribution/SEGADTracker.h>
 #define SEGADTrackerImported
-#elif __has_include("SEGTaplyticsIntegrationFactory.h")
+#elif __has_include("SEGADTracker.h")
 #import "SEGADTracker.h"
 #define SEGADTrackerImported
 #endif
